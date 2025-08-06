@@ -259,10 +259,7 @@ if not df.empty:
                 # Create input fields for user
                 input_data = {}
                 for feature in feature_names:
-                    if (
-                        feature
-                        in df.select_dtypes(include=["int64", "float64"]).columns
-                    ):
+                    if feature in df.select_dtypes(include=["int64", "float64"]).columns:
                         min_val = df[feature].min()
                         max_val = df[feature].max()
                         if feature == "Age":
